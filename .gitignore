@@ -1,0 +1,12 @@
+Kannada/
+models/
+data/
+webapp/templates/static/images/appimgs
+webapp/templates/static/images/classes
+create_labeling_file.py
+labels.csv
+test.py
+touchpad.html
+labeling/
+labeling_data.py
+KannadaImg.tgz

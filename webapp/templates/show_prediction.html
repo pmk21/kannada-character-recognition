@@ -1,0 +1,76 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #pred{
+            text-align: center;
+            margin-top: 100px;
+        }
+        .ctxt{
+            text-align: center;
+            margin-top: 100px;
+        }
+        #imgs{
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    {% include 'includes/_bootstrap.html'%}
+</head>
+<body>
+    {% include 'includes/_navbar.html' %}
+    <h4 class="ctxt">Drawn character</h4>
+    <div class="container" id="imgs">
+        <img class="img-thumbnail" src=" {{url_for('static', filename='images/appimgs/' + curr_img)}} " alt="character">
+    </div>
+
+    <div class="container" id="imgs">
+        <h3 id="pred" class="page-header"><b>Prediction: {{prediction}}<b></h3>
+        <h4>Class Image</h4>
+        <img class="img-thumbnail" src="{{url_for('static', filename='images/classes/' + prediction + '.png')}}" alt="character" width="250" height="250"/>
+    </div>
+    <br/>
+    <div class="container">
+        <h1 class="page-header">Other Top Predictions</h1>
+        <hr/>
+        {% set c = 12 %}
+        {% for class in top_classes %}
+            {% if loop.index-1 % 3 == 0 %}
+                <div class="row">
+                    <div class="col-md-4" style="text-align:center;">
+                        <!--<a class="thumbnail" href="#"data-image-id="" data-toggle="modal"data-title=""
+                        data-image="https://images.pexelscom/photos/853168/pexels-photo-85316.jpeg?auto=compress&cs=tinysrgbdpr=2&h=750&w=1260"
+                        data-target="#image-gallery">-->
+                        <img class="img-thumbnail"
+                             src="{{url_for('static', filename='images/classes/'+class+'.png')}}"
+                             alt="character" width="250" height="250"/>
+                        <figcaption class="figure-caption" style="text-align:center;padding: 10">{{loop.index}}.&nbsp;Class&nbsp;-&nbsp;{{class}}</figcaption>
+                    </div>
+
+            {% else %}
+                <div class="col-md-4" style="text-align:center;">
+                    <!--<a class="thumbnail" href="#"data-image-id="" data-toggle="modal"data-title=""
+                    data-image="https://images.pexelscom/photos/853168/pexels-photo-85316.jpeg?auto=compress&cs=tinysrgbdpr=2&h=750&w=1260"
+                    data-target="#image-gallery">-->
+                    <img class="img-thumbnail" src="{{url_for('static', filename='images/classes/'+class+'.png')}}" alt="character" width="250" height="250"/>
+                    <figcaption class="figure-caption" style="text-align:center;padding: 10">{{loop.index}}.&nbsp;Class&nbsp;-&nbsp;{{class}}</figcaption>
+                </div>
+            {% endif %}
+            {% set c = c + 1 %}
+            
+            {% if loop.index-1 != 0 and loop.index-1 % 3 == 0  %}
+                </div>
+                
+            {% endif %}
+            
+            
+        {% endfor %}
+    </div>
+            
+
+</body>
+</html>
