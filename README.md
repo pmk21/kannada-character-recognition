@@ -2,15 +2,17 @@
 
 This application predicts the handwritten Kannada character using a pretrainet ResNet18 model. You can use the basic web app to draw the character on a sketchpad and get the prediction.
 
+## Demo
+
+![Alt Text](demo.gif)
+
 ## Dataset
 
 For this model, I have used the Kannada handwritten characters from the [Chars74k Dataset](http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/).
 
 The dataset contains 657 classes and 25 images from each class(not a lot).
 
-## Getting Started 
-
-***
+## Getting Started
 
 ## Code Requirements
 
@@ -63,7 +65,7 @@ Sklearn
 ```shell
 $ conda install -c anaconda scikit-learn
 ```
-After installing the packages type the following command in order to update all packages
+After installing the packages type the following command in order to update all the packages.
 ```shell
 $ conda update --all
 ```
@@ -87,10 +89,13 @@ $ conda update --all
 **Please run the above Training and Validation Data Preparation as well as Training the Model steps before running the web app.**
 
 1. Run the `create_classes_folder.py`.
+
     ```shell
     $ python3 create_classes_folder.py
     ```
+
 2. Open a terminal in the `webapp` directory and run `app.py`
+
    ```shell
     $ python3 app.py
     ```
