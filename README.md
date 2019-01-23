@@ -18,6 +18,8 @@ The dataset contains 657 classes and 25 images from each class(not a lot).
 
 **Highly recommend a NVIDIA GPU** in order to use this project, but will work on a CPU too. The program will run a lot slower when using CPU.
 
+**This project only works on Linux.**(The fastai library only runs on Linux)
+
 Recommend downloading all the below requirements using conda package manager which comes with [Anaconda](https://www.anaconda.com/download/) or [Miniconda](https://conda.io/miniconda.html) (Light version of Anaconda).
 
 Python 3.6 and any greater version(Comes by default along with Anaconda).
@@ -100,3 +102,9 @@ $ conda update --all
     $ python3 app.py
     ```
     This will start the flask server and the application can be used by opening the link displayed on the terminal.
+
+## License
+
+This project is licensed under the MIT License.
+
+MIT © Prithvi MK
